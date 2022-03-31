@@ -50,6 +50,9 @@ class FMMixer(BaseModel):
         
         if mlp_func == "tanh":
             func = nn.Tanh()
+
+        if mlp_func == "sigmoid":
+            func = nn.Sigmoid()
         
         #Define the MLP structure
         self.mlp = [MLPMixer(mlp_dim, reduction_method, (MLPMixer.MLP(num_feat, inner_dim[0], func, mlp_dropout[0])),
